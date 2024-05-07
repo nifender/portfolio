@@ -1,7 +1,5 @@
 // TODO: 1. Определить стартовое положение змейки
-let snakeX = 5;
-let snakeY = 5;
-
+let snakeX = 5, snakeY = 5;
 let foodX, foodY;
 let velocityX = 0, velocityY = 0;
 let snakeBody = [];
@@ -77,11 +75,10 @@ function handleNewIteration() {
     }
 
     // TODO: 3. Включить обновление позиции еды
-    updateFoodPosition();
-
+    updateFoodPosition()
 
     // TODO: 4. Включить наполнение змеи
-    snakeBody.push([foodY, foodX]);
+snakeBody.push([foodX, foodY]);
 
     score++;
 
@@ -167,13 +164,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const intervalId = setInterval(initGame, 100);
 
     // TODO: 2. Включить отслеживание нажатия клавиатуры для старта игры
-    document.addEventListener('keyup', changeDirection);
-
+    document.addEventListener('keyup', changeDirection)
 
     document.addEventListener('snake:game_over', function (event) {
         // TODO: 5. Включить обработку события завершения игры
         clearInterval(intervalId);
-        let modal=document.getElementById('game-over-modal');
-        modal.style.display = 'block';
+        openLostModal();
     });
 })
